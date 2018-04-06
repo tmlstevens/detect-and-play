@@ -14,17 +14,18 @@ $(document).ready(function(){
     $.ajax({
         url: detectURL,
         method: "POST"
-        }).then(console.log);
+    }).then(function(response) {
+        // console.log(response.faces[0].face_token);
+        var faceToken = response.faces[0].face_token;
+    });
 
         
 // ANALYZE
-    var faceTokens = ''; //need response value from DETECT
-
     var analyzeURL = "https://api-us.faceplusplus.com/facepp/v3/face/analyze?api_key=N2r5hDIKEfpq8-C8_4R9FsHZ2IeohyU-&api_secret=bEnlP7JnI8FUw0q4m7SGXrqudZXeeBOP&return_landmark=1&face_tokens=" + faceToken;
 
     $.ajax({
-    url: queryURL,
-    method: "POST"
-    }).then(console.log);
+        url: analyzeURL,
+        method: "POST"
+    }).then(console.log)
 
 })
