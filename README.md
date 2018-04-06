@@ -8,7 +8,7 @@ Here's how it works:
 When you have work that's ready to go into develop:
 3. See what you've changed: `git status`
 4. Assuming you want to stage everything that you've created/changed: `git add -A`
-5. Commit your work: `git commit -m 'enter your commit message`
+5. Commit your work: `git commit -m 'enter your commit message'`
 6. Push your local branch to github: `git push -u origin myLocalBranch`
 7. Login github
 8. Navigate to https://github.com/tmlstevens/detect-and-play/compare/develop...myLocalBranch (make sure you enter the name of your branch)
