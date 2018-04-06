@@ -13,4 +13,6 @@ When you have work that's ready to go into develop:
 7. Login github
 8. Navigate to https://github.com/tmlstevens/detect-and-play/compare/develop...myLocalBranch (make sure you enter the name of your branch)
 This URL will show you your changes, relative to develop
-9. 
+9. Click the green 'create pull request' button when you're ready
+10. Wait for one of us to review and merge your changes into develop
+11. Once your work has been merged into develop rebase your local branch: 
