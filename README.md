@@ -15,4 +15,7 @@ When you have work that's ready to go into develop:
 This URL will show you your changes, relative to develop
 9. Click the green 'create pull request' button when you're ready
 10. Wait for one of us to review and merge your changes into develop
-11. Once your work has been merged into develop rebase your local branch: 
+11. When work has been merged into develop on github, get the changes in your local repo and working branch: <br>
+   a) update your local repo with everything on github (origin) `git fetch origin` <br>
+   b) make sure your local branch is checked out `git checkout myLocalBranch`<br>
+   c) update your local branch with origin/develop `git rebase origin/develop`
