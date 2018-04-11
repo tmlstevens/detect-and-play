@@ -1,0 +1,270 @@
+html { 
+    background: url(http://cdn26.us1.fansshare.com/photo/3dvectorwallpaper/abstract-vector-art-wallpaper-for-desktop-background-555206747.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  body {
+      font-size: 14px;
+      line-height: 1.42857143;
+      background-color: transparent;
+  }
+  
+  .navbar-default {
+      margin-right: 5px;
+      margin-left: 5px;
+      margin-top: 5px;
+      background-color: transparent
+  }
+  
+  .container-fluid {
+      padding-right: 15px;
+      padding-left: 100px;
+      margin-right: auto;
+      margin-left: auto;
+      border: transparent;
+      height: 120px;
+      background: url(https://blog.redbubble.com/wp-content/uploads/2014/01/Lima4-header.jpg) no-repeat right;
+      background-color: #43ddbb;
+      opacity: 0.75;
+      box-shadow: 10px 10px 50px 20px black;
+      border-radius: 25px;
+  
+  }.navbar-right {
+      float: left;
+      margin-top: 60px;
+  }
+  
+  
+  .navbar-default .navbar-nav>li>a {
+      font-size: 20px;
+      color: white;
+      text-decoration: underline overline;
+  }
+  .navbar-default .navbar-nav>li>a:hover{
+  
+      color: darkred;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      text-shadow:
+      0 0  5px #ffc,
+      0 0  10px yellow, 
+      0 0  15px #feff76, 
+      0 0  20px #fac74f, 
+      0 0  35px #f6512f, 
+      0 0  40px #f6512f, 
+      0 0  60px orangered, 
+      0 0  90px #f55034 
+  }
+  .navbar>.container-fluid .navbar-brand {
+      margin-top: 6%;
+  }
+  
+  .navbar-default .navbar-brand {
+      font-family: 'Jua', sans-serif;
+      font-size: 95px;
+      padding-right: 40px;
+      padding-left: 40px;
+      padding-bottom: 10px;
+      padding-top: 15px;
+      height: 60px;
+      font-weight: bold;
+      color: red;
+      cursor: none;
+      position: relative;
+      -webkit-text-stroke-width: 1px;
+     -webkit-text-stroke-color: #ff0000;
+      text-shadow: 0 1px 0 #ccc, 
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+  }
+  .navbar-default .navbar-brand:hover
+  {
+      color: darkred;
+      text-shadow:
+      0 0  5px #ffc,
+      0 0  10px yellow, 
+      0 0  15px #feff76, 
+      0 0  20px #fac74f, 
+      0 0  35px #f6512f, 
+      0 0  40px #f6512f, 
+      0 0  60px orangered, 
+      0 0  90px #f55034 
+  }
+  
+  .imageupload {
+  
+      padding-bottom: 230px;
+      border: 2px solid;
+      background-color: lightgray;
+      margin-bottom: 5px;
+      height: 280px;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  ol, ul {
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding-right: 400px;
+      font-size: 18px;
+  }
+  
+  li:hover {
+      background-color: #4aaaa5;
+      font-size: 100%;
+      color:white;
+  }
+  
+  .col-sm-4 {
+      float: left;
+      margin-right: 30px;
+      position: absolute;
+      margin-top: 20px;
+      width: 40%;
+      height: 550px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      margin-left: 112px;
+      margin-bottom: 120px;
+      border-radius: 20px 15px 15px 15px/260px 1000px 255px 255px;
+  }
+  
+  .col-sm-4 p {
+      font-family: 'Georgia';
+      color:black;
+      font-size: 20px; 
+  
+  }
+  
+  .row {
+      color: #4aaaa5;
+      font-family: 'Georgia';
+      text-align: left;
+  }
+  
+  .form-group {
+      background-color: #ffffff;
+      color: black;
+  }
+  
+  
+  .h2, h2 {
+      color: #4aaaa5;
+      font-size: 30px;
+      padding-left: 20px;
+      font-weight: bold;
+  }
+  
+  .col-sm-8 {
+      width: 40%;
+      height: 500px;
+      float: right;
+      margin-right: 80px;
+      padding-top: 20px;
+      margin-top: 20px;
+      position: relative;
+      display: inline;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  
+  .h3, h3 {
+      font-size: 20px;
+      padding-left: 20px;
+      color: #4aaaa5;
+      font-family: 'Jua', sans-serif;
+  }
+  
+  .h4, h4 {
+      font-size: 15px;
+      padding-left: 20px;
+      color: #4aaaa5;
+      font-family: 'Jua', sans-serif;
+  }
+  
+  label {
+  
+      font-family: 'Jua', sans-serif;
+      color:#4aaaa5;
+      font-size:2rem;
+  
+  }
+  
+  input {
+  
+      font-family: 'Jua', sans-serif;
+      color:#41403E;
+      font-size:15px;
+      border:solid 3px #4aaaa5;
+      background-color: lightgray;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  
+  button {
+  
+      font-family: 'Jua', sans-serif;
+      border:solid 5px #4aaaa5;
+      align-self:center;
+      background:transparent;
+      padding:1rem 1rem;
+      margin:0 1rem;
+      background-color: #43ddbb;
+      transition:all .5s ease;
+      color:#41403E;
+      font-size:20px;
+      letter-spacing:1px;
+      outline:none;
+      box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  button:hover {
+  
+      box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+      transform: scale(1.1); 
+  }
+  
+  span button{
+  
+      margin-top: 35px;
+      margin-left: 40%;
+      padding-left: 50px;
+      padding-right: 50px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  }
+  
+  
+  input:hover {
+      box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+      border:solid 3.5px #4aaaa5;
+  }
+  
+  .VideoPlaylist {
+  
+      border:solid 3.5px #ff0000;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  
+  .footer {
+      border-top: 5px solid #FFD700;
+      background-color: #1b1a1a;
+      margin-top: 30px;
+      color: white;
+      padding: 15px;
+      width: 100%;
+      position:fixed;
+      bottom:0;
+      left:0;
+      font-size: 15px;
+      text-align: center;
+  }
