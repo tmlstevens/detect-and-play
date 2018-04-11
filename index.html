@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -51,6 +52,37 @@
         </div>
 
 <!--- Sidebar -->
+=======
+	<title>Dope Project</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="assets/javascript/javascriptOne.js"></script>
+	<script src="assets/javascript/javascriptTwo.js"></script>
+</head>
+<!-- Webcam crap -->
+<body onload="init();">
+    <h1>Take a snapshot of the current video stream</h1>
+   Click on the Start WebCam button.
+     <p>
+    <button  onclick="startWebcam();">Start WebCam</button>
+    <button onclick="stopWebcam();">Stop WebCam</button> 
+       <button id="snapshotMan" onclick="snapshot();" >Take Snapshot</button>
+       <button onclick="ajaxScreenShot();">Analyze Snapshot</button>
+       <button onclick="removesnapshot();">Remove Snapshot</button>
+        
+    </p>
+    <video onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
+  <p>
+
+        Snapshot : <p>
+      <canvas  id="myCanvas" width="400" height="350"></canvas>  
+
+      <!-- Webcam Crap ends -->
+
+      <div id="analysis">
+
+      </div>
+
 
       <div class="col-sm-8" style="background-color:White;">
       <h2>Video Playlist <i class="fab fa-youtube"></i></h2>
@@ -64,8 +96,6 @@
         <p>copywrite@AGroupOfDudes</p>
       </div>
 
-    <script type="text/javascript" src="assets/javascript/logic.js">
-    </script>
 
-</body>
+  </body>
 </html>
