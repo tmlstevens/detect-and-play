@@ -1,25 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Document</title>
+	<title>Dope Project</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="assets/javascript/javascriptOne.js"></script>
+	<script src="assets/javascript/javascriptTwo.js"></script>
 </head>
-<!--Test Branch Hasan -->
-<body>
-    <span>this is our site</span>
+<!-- Webcam crap -->
+<body onload="init();">
+    <h1>Take a snapshot of the current video stream</h1>
+   Click on the Start WebCam button.
+     <p>
+    <button  onclick="startWebcam();">Start WebCam</button>
+    <button onclick="stopWebcam();">Stop WebCam</button> 
+       <button id="snapshotMan" onclick="snapshot();" >Take Snapshot</button>
+       <button onclick="ajaxScreenShot();">Analyze Snapshot</button>
+       <button onclick="removesnapshot();">Remove Snapshot</button>
+        
+    </p>
+    <video onclick="snapshot(this);" width=400 height=400 id="video" autoplay></video>
+  <p>
+
+        Snapshot : <p>
+      <canvas  id="myCanvas" width="400" height="350"></canvas>  
+
+      <!-- Webcam Crap ends -->
+
+
+      <div id="analysis">
+
+      </div>
+
+      <div id="appendvideo">
+      </div>
 
 
 
-
-
-
-    <script type="text/javascript" src="assets/javascript/logic.js">
-    </script>
-
-</body>
+  </body>
 </html>
