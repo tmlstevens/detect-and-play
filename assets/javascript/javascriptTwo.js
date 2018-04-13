@@ -4,15 +4,12 @@ jQuery.ajaxPrefilter(function(options) {
     }
 });
 
-
+    var globalFaceResponse;
 
     var test = "test";
     console.log(test);
 
-    function consoleLogImagePath() {
-
-    	console.log(neededCode);
-    }
+  
 
 
   
@@ -48,14 +45,75 @@ console.log('a')
     }).then(function(response) {
         // console.log(response.faces[0].face_token);
         
+        var shortenMoodKey =response.faces[0].attributes.emotion; 
         
         $("#analysis").append(JSON.stringify(response.faces[0].attributes));
-        
+
+        console.log(shortenMoodKey.happiness);
+
+        if (shortenMoodKey.happiness > (shortenMoodKey.fear + shortenMoodKey.surprise + 
+            shortenMoodKey.anger + shortenMoodKey.disgust + shortenMoodKey.sadness
+            +shortenMoodKey.neutral)) {
+            happyMood();
+        }
+
+
+
+
+
+
+
+
+        //Youtube API Key
+        //AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U
 
 
     })
 
+
 }
+
+function happyMood () {
+
+    $.ajax({
+    url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLBSKL0_pVgjkjLh3bLvmT0mP_Rv9WkEXF',
+    method: "GET",
+    }).then(function(response){
+
+
+
+        for (i=0; i<5; i++){
+
+            console.log(response.items[i].snippet.resourceId.videoId);
+
+            var divToContain = $('<div> </div>'); //created new div 
+            divToContain.addClass("VideoContainerClass");
+
+            var iframe = $(`<iframe width="560" height="315"
+             src="https://www.youtube.com/embed/${response.items[i].snippet.resourceId.videoId}" 
+             frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
+            
+            $(divToContain).append(iframe);
+
+            $("#appendvideo").append(divToContain);
+
+
+        }
+
+    
+    })
+
+    
+        // var id = "l4WNrvVjiTw";
+        // var iframe = $(`<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
+        // $("#appendvideo").html(iframe);
+
+    }
+    
+
+
+
+
 
 
 

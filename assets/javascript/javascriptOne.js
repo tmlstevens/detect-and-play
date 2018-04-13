@@ -39,6 +39,8 @@
            console.log("getUserMedia not supported");
         }  
         $("#myCanvas").show();
+        
+
       }
 
       function stopWebcam() {
