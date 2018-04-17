@@ -11,6 +11,17 @@
       var tooLong;
       var neededCode;
 
+      $('#on-off').click(function() {
+         if ($(this).html() === 'Start Webcam') {
+            $(this).html('Stop Webcam');
+            startWebcam()
+         }
+         else if ($(this).html() === 'Stop Webcam') {
+            $(this).html('Start Webcam');
+            stopWebcam()
+         }
+      })
+
       function startWebcam() {
         $("video").show();
         if (navigator.getUserMedia) {
