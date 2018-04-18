@@ -3,15 +3,21 @@ jQuery.ajaxPrefilter(function(options) {
         options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
     }
 });
+    
 
-    var globalFaceResponse;
+  
+function removeVideos() {
 
-    var test = "test";
-    console.log(test);
+    $(".VideoContainerClass").empty();
+}
+
+  
 
 // DETECT
 
 function ajaxScreenShot() {
+
+    removeVideos();
     
     var imageFile = neededCode;
 
@@ -30,92 +36,120 @@ function ajaxScreenShot() {
         'return_attributes': 'emotion'
     };
 
-    console.log(data);
+    
 
-console.log('a')
+
     $.ajax({
         url: detectURL,
         method: "POST",
         data: data,
     }).then(function(response) {
-        // console.log(response.faces[0].face_token);
+        
         
         var shortenMoodKey =response.faces[0].attributes.emotion; 
         
-        $("#analysis").append(JSON.stringify(response.faces[0].attributes));
+        console.log(JSON.stringify(response.faces[0].attributes));
 
-        console.log(shortenMoodKey.happiness);
+        var highestMoodKey;
+        var highestMoodValue = 0;
+        
 
-        if (shortenMoodKey.happiness > (shortenMoodKey.fear && shortenMoodKey.surprise && 
-            shortenMoodKey.anger && shortenMoodKey.disgust && shortenMoodKey.sadness
-            && shortenMoodKey.neutral)) {
+var moodKeys = Object.keys(shortenMoodKey);
+
+var moodValues = Object.values(shortenMoodKey);
+
+
+
+        for (var i=0; i< moodValues.length; i++){
+
+            if (moodValues[i] >= highestMoodValue) {
+
+                highestMoodValue=moodValues[i];
+                highestMoodKey=i;
+
+            }
+        }
+
+       
+
+        switch (moodKeys[highestMoodKey]) {
+            case "happiness":
             happyMood();
-        }
-        if (shortenMoodKey.fear > (shortenMoodKey.happiness && shortenMoodKey.surprise && 
-            shortenMoodKey.anger && shortenMoodKey.disgust && shortenMoodKey.sadness
-            && shortenMoodKey.neutral)) {
+            break;
+            case "fear":
             fearMood();
-        }
-        if (shortenMoodKey.surprise > (shortenMoodKey.happiness && shortenMoodKey.fear && 
-            shortenMoodKey.anger && shortenMoodKey.disgust && shortenMoodKey.sadness
-            && shortenMoodKey.neutral)) {
+            break;
+            case "surprise":
             surpriseMood();
-        }
-        if (shortenMoodKey.anger > (shortenMoodKey.fear + shortenMoodKey.surprise + 
-            shortenMoodKey.happiness + shortenMoodKey.disgust + shortenMoodKey.sadness
-            +shortenMoodKey.neutral)) {
+            break;
+            case "anger":
             angerMood();
-        }
-        if (shortenMoodKey.disgust > (shortenMoodKey.fear + shortenMoodKey.surprise + 
-            shortenMoodKey.happiness + shortenMoodKey.anger + shortenMoodKey.sadness
-            +shortenMoodKey.neutral)) {
+            break;
+            case "disgust":
             disgustMood();
-        }
-        if (shortenMoodKey.sadness > (shortenMoodKey.fear + shortenMoodKey.surprise + 
-            shortenMoodKey.happiness + shortenMoodKey.disgust + shortenMoodKey.anger
-            +shortenMoodKey.neutral)) {
+            break;
+            case "sadness":
             sadnessMood();
-        }
-        if (shortenMoodKey.neutral > (shortenMoodKey.fear + shortenMoodKey.surprise + 
-            shortenMoodKey.happiness + shortenMoodKey.disgust + shortenMoodKey.sadness
-            +shortenMoodKey.anger)) {
+            break;
+            case "neutral":
             neutralMood();
+            break;
+
         }
+
+
     })
+
+
 }
 
 function happyMood () {
-//Youtube API Key
-//AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U
+
+    $("#myModalHappy").show();
+
+
+
     $.ajax({
-    url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLBSKL0_pVgjkjLh3bLvmT0mP_Rv9WkEXF',
+    url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLBSKL0_pVgjkjLh3bLvmT0mP_Rv9WkEXF&maxResults=5',
     method: "GET",
     }).then(function(response){
 
+
+
         for (i=0; i<5; i++){
-            console.log(response.items[i].snippet.resourceId.videoId);
-            var divToContain = $('<div> </div>'); //created new div 
+        
+
+            var divToContain = $('<div> </div>'); 
             divToContain.addClass("VideoContainerClass");
-            var iframe = $(`<iframe width="560" height="315"
+
+            var iframe = $(`<iframe width="95%" height="315"
              src="https://www.youtube.com/embed/${response.items[i].snippet.resourceId.videoId}" 
              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
+            
             $(divToContain).append(iframe);
+
             $("#appendvideo").append(divToContain);
+
+
         }
+
+    
     })
-        // var id = "l4WNrvVjiTw";
-        // var iframe = $(`<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
-        // $("#appendvideo").html(iframe);
+
+    
+
     }
-function fearMood () {
+
+    function fearMood () {
+        $("#myModalFear").show();
     $.ajax({
-        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG',
+        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLBSKL0_pVgjn-w4q1ddR2yjwPf-BueoX5&maxResults=5',
         method: "GET",
     }).then(function(response){
         for (i=0; i<5; i++){
             var divToContain = $('<div> </div>'); //created new div 
             divToContain.addClass("VideoContainerClass");
-            var iframe = $(`<iframe width="560" height="315"
+            var iframe = $(`<iframe width="95%" height="315"
                 src="https://www.youtube.com/embed/${response.items[i].snippet.resourceId.videoId}"
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
             $(divToContain).append(iframe);
@@ -123,31 +157,56 @@ function fearMood () {
         }
     })
 }
+
+
 function surpriseMood () {
+
+    $("#myModalSurprise").show();
+
     $.ajax({
-        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI',
-        method: "GET",
+    url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLBSKL0_pVgjkbJv_JOQm6ZB7is9Ctp7hf&maxResults=5',
+    method: "GET",
     }).then(function(response){
+
+
+
         for (i=0; i<5; i++){
+
+            
+
             var divToContain = $('<div> </div>'); //created new div 
             divToContain.addClass("VideoContainerClass");
-            var iframe = $(`<iframe width="560" height="315"
-                src="https://www.youtube.com/embed/${response.items[i].snippet.resourceId.videoId}"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
+
+            var iframe = $(`<iframe width="95%" height="315"
+             src="https://www.youtube.com/embed/${response.items[i].snippet.resourceId.videoId}" 
+             frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
+            
             $(divToContain).append(iframe);
+
             $("#appendvideo").append(divToContain);
+
+
         }
+
+    
     })
-}
+
+    
+
+    }
+
+
 function angerMood () {
+
+    $("#myModalAnger").show();
     $.ajax({
-        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PL6Go6XFhidED5RmiuRdks87fyOvlXqn14',
+        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLBSKL0_pVgjl-tkD0jJnb3_1HUM-QFD4s&maxResults=5',
         method: "GET",
     }).then(function(response){
         for (i=0; i<5; i++){
             var divToContain = $('<div> </div>'); //created new div 
             divToContain.addClass("VideoContainerClass");
-            var iframe = $(`<iframe width="560" height="315"
+            var iframe = $(`<iframe width="95%" height="315"
                 src="https://www.youtube.com/embed/${response.items[i].snippet.resourceId.videoId}"
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
             $(divToContain).append(iframe);
@@ -156,14 +215,15 @@ function angerMood () {
     })
 }
 function disgustMood () {
+    $("#myModalDisgust").show();
     $.ajax({
-        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLMC9KNkIncKvYin_USF1qoJQnIyMAfRxl',
+        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLBSKL0_pVgjmGGbISlHpt36R9DN8GkoxW&maxResults=5',
         method: "GET",
     }).then(function(response){
         for (i=0; i<5; i++){
             var divToContain = $('<div> </div>'); //created new div 
             divToContain.addClass("VideoContainerClass");
-            var iframe = $(`<iframe width="560" height="315"
+            var iframe = $(`<iframe width="95%" height="315"
                 src="https://www.youtube.com/embed/${response.items[i].snippet.resourceId.videoId}"
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
             $(divToContain).append(iframe);
@@ -172,14 +232,15 @@ function disgustMood () {
     })
 }
 function sadnessMood () {
+    $("#myModalSadness").show();
     $.ajax({
-        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLP9GgDwtdPPQEejYdDz6EJhdEZbTuO5Lz',
+        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLBSKL0_pVgjliDANarGD13WUyMxnwJG5y&maxResults=5',
         method: "GET",
     }).then(function(response){
         for (i=0; i<5; i++){
             var divToContain = $('<div> </div>'); //created new div 
             divToContain.addClass("VideoContainerClass");
-            var iframe = $(`<iframe width="560" height="315"
+            var iframe = $(`<iframe width="95%" height="315"
                 src="https://www.youtube.com/embed/${response.items[i].snippet.resourceId.videoId}"
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
             $(divToContain).append(iframe);
@@ -188,14 +249,15 @@ function sadnessMood () {
     })
 }
 function neutralMood () {
+    $("#myModalNeutral").show();
     $.ajax({
-        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLZT-Z4PSNV5fUlyLXiHatp1SJJaCfF3JM',
+        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDU3pOoVRxd7L2HiBLLWlCHZBhevXCln0U&playlistId=PLBSKL0_pVgjmKlyVBA35pkosUqDW3OXa6&maxResults=5',
         method: "GET",
     }).then(function(response){
         for (i=0; i<5; i++){
             var divToContain = $('<div> </div>'); //created new div 
             divToContain.addClass("VideoContainerClass");
-            var iframe = $(`<iframe width="560" height="315"
+            var iframe = $(`<iframe width="95%" height="315"
                 src="https://www.youtube.com/embed/${response.items[i].snippet.resourceId.videoId}"
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`);
             $(divToContain).append(iframe);
@@ -203,6 +265,30 @@ function neutralMood () {
         }
     })
 }
+
+$("#myModalHappy").click(function () {
+    $("#myModalHappy").hide();
+});
+$("#myModalFear").click(function () {
+    $("#myModalFear").hide();
+});
+$("#myModalSurprise").click(function () {
+    $("#myModalSurprise").hide();
+});
+$("#myModalAnger").click(function () {
+    $("#myModalAnger").hide();
+});
+$("#myModalDisgust").click(function () {
+    $("#myModalDisgust").hide();
+});
+$("#myModalSadness").click(function () {
+    $("#myModalSadness").hide();
+});
+$("#myModalNeutral").click(function () {
+    $("#myModalNeutral").hide();
+});
+
+    
 
 
 

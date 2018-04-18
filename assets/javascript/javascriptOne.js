@@ -1,3 +1,8 @@
+
+
+  
+
+
  //--------------------
       // GET USER MEDIA CODE
       //--------------------
@@ -12,15 +17,15 @@
       var neededCode;
 
       $('#on-off').click(function() {
-         if ($(this).html() === 'Start Webcam') {
-            $(this).html('Stop Webcam');
-            startWebcam()
-         }
-         else if ($(this).html() === 'Stop Webcam') {
-            $(this).html('Start Webcam');
-            stopWebcam()
-         }
-      })
+        if ($(this).html() === 'Start Webcam') {
+           $(this).html('Stop Webcam');
+           startWebcam()
+        }
+        else if ($(this).html() === 'Stop Webcam') {
+           $(this).html('Start Webcam');
+           stopWebcam()
+        }
+     })
 
       function startWebcam() {
         $("video").show();
@@ -71,6 +76,8 @@
       }
 
       function snapshot() {
+
+        $("#myCanvas").show();
          // Draws current image from the video element into the canvas
         ctx.drawImage(video, 0,0, canvas.width, canvas.height);
         
@@ -93,4 +100,6 @@
        
       
     }
+
+  
 

@@ -1,40 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Dope Project</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="assets/javascript/javascriptOne.js"></script>
-	<script src="assets/javascript/javascriptTwo.js"></script>
-</head>
-<!-- Webcam crap -->
-<body onload="init();">
-    <h1>Take a snapshot of the current video stream</h1>
-   Click on the Start WebCam button.
-     <p>
-    <button id="on-off">Start Webcam</button> 
-       <button id="snapshotMan" onclick="snapshot();" >Take Snapshot</button>
-       <button onclick="ajaxScreenShot();">Analyze Snapshot</button>
-       <button onclick="removesnapshot();">Remove Snapshot</button>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Jua', sans-serif;
+        }
         
-    </p>
-    <video onclick="snapshot(this);" width=400 height=400 id="video" autoplay></video>
-  <p>
+        .backgroundWrap {
+            position: fixed;
+            z-index: -1000;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+        
+        #videoBgElement {
+            position: relative;
+            top: 0;
+            left: 0;
+            min-height: 100%;
+            min-width: 100%;
+        }
+        
+        .navbar-brand {
+            font-size: 95px;
+            padding-right: 40px;
+            padding-left: 40px;
+            padding-bottom: 10px;
+            padding-top: 15px;
+            height: 60px;
+            font-weight: bold;
+            color: red;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #ff0000;
+            text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+            color: darkred;
+            text-shadow: 0 0 5px #ffc, 0 0 10px yellow, 0 0 15px #feff76, 0 0 20px #fac74f, 0 0 35px #f6512f, 0 0 40px #f6512f, 0 0 60px orangered, 0 0 90px #f55034
+        }
+        
+        .content {
+            width: 100%;
+            min-height: 100%;
+            z-index: 1000;
+            text-shadow: #3bc6a8 3px 2px 2px;
+        }
+        
+        .content h1 {
+            /* color: #F5DA81; */
+            /* text-shadow: #3bc6a8 4px 4px; */
+            text-align: center;
+            /* font-size: 75px; */
+            margin-top: -1px;
+        }
+        
+        .content h3 {
+            /* font-family: Merienda Font; */
+            font-family: Snell Roundhand, cursive;
+            font-size: 40px;
+            letter-spacing: 5px;
+            color: rgb(253, 253, 253);
+            text-shadow: #3bc6a8 2px 2px 2px;
+            text-align: center;
+            margin: 0 30px;
+            /* border-bottom: red 3px solid; */
+            font-style: oblique;
+        }
+        
+        #membHead,
+        #members {
+            text-align: left;
+            font-size: 38px;
+            margin-left: 30px;
+            color: #F5DA81;
+            letter-spacing: 10px;
+            line-height: 5px;
+        }
+        
+        #membHead {
+            text-decoration: underline;
+            margin-top: 30px;
+        }
+        
+        #members {
+            transform: translate(-50%, -50%);
+            transform: Y(10deg);
+            transform-origin: right;
+            animation: animate 18s infinite;
+        }
+        
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                transform: skewY1(10deg);
+            }
+            50% {
+                opacity: 2;
+                transform: skewY(2deg);
+            }
+            100% {
+                opacity: 0;
+                transform: skewY(0deg);
+            }
+        }
+        
+        .btn1,
+        .btn2 {
+            font-family: 'Jua', sans-serif;
+            border: solid 5px #4aaaa5;
+            background: transparent;
+            padding: 1rem 1rem;
+            background-color: #43ddbb;
+            transition: all .5s ease;
+            color: #41403E;
+            font-size: 15px;
+            letter-spacing: 1px;
+            outline: none;
+            box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            /* position: absolute; */
+        }
+        
+        .btn1 {
+            margin-top: -200px !important;
+            float: right;
+            margin-right: 25px;
+        }
+        
+        .btn2 {
+            margin-top: -80px !important;
+            float: right;
+            margin-right: 15px;
+        }
+        
+        #btn:hover {
+            box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
 
-        Snapshot : <p>
-      <canvas  id="myCanvas" width="400" height="350"></canvas>  
+<body>
+    <div class="backgroundWrap">
+        <video src="assets/faces/candle.mp4" id="videoBgElement" preload="auto" autoplay="true" muted="muted">
+        </video>
+    </div>
 
-      <!-- Webcam Crap ends -->
+    <div class="content">
+        <h1 class="navbar-brand">Mood-iliser</h1>
+        <!-- <p class="navbar-brand">Mood-iliser</p> -->
+        <h3>We deal...in emotions! 😏</h3>
 
+        <h2 id="membHead">TEAM MEMBERS</h2><br>
+        <div id="members">
+            <h4 style="color: rgb(234,81,69) ">Naeem Ali</h4>
+            <h4 style="color:rgb(251,186,2)"> Zachary Kite </h4>
+            <h4 style="color: rgb(50,166,81)">Hasan Mustafa</h4>
+            <h4 style="color:#474ddd"> Tim Stevens</h4>
+        </div>
+    </div>
+    <a href="app.html"><button class="btn1">Mood-iliser Web App</button></a>
+    <a href="comments.html"><button class="btn2">Leave a comment man</button></a>
 
-      <div id="analysis">
+</body>
 
-      </div>
-
-      <div id="appendvideo">
-      </div>
-
-
-
-  </body>
 </html>
