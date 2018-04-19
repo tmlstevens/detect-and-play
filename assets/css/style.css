@@ -1,0 +1,525 @@
+html { 
+    background: url(http://cdn26.us1.fansshare.com/photo/3dvectorwallpaper/abstract-vector-art-wallpaper-for-desktop-background-555206747.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x:hidden;
+  }
+  body {
+      font-size: 14px;
+      line-height: 1.42857143;
+      background-color: transparent;
+  }
+  
+  .navbar-default {
+      margin-right: 5px;
+      margin-left: 5px;
+      margin-top: 5px;
+      background-color: transparent
+  }
+  
+  .container-fluid {
+      padding-right: 15px;
+      padding-left: 100px;
+      margin-right: auto;
+      margin-left: auto;
+      border: transparent;
+      height: 120px;
+      background: url(https://blog.redbubble.com/wp-content/uploads/2014/01/Lima4-header.jpg) no-repeat right;
+      background-color: #43ddbb;
+      opacity: 0.75;
+      box-shadow: 10px 10px 50px 20px black;
+      border-radius: 25px;
+  
+  }.navbar-right {
+      float: left;
+      margin-top: 60px;
+  }
+  
+  
+  .navbar-default .navbar-nav>li>a {
+      font-size: 20px;
+      color: white;
+      text-decoration: underline overline;
+  }
+  .navbar-default .navbar-nav>li>a:hover{
+  
+      color: darkred;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      text-shadow:
+      0 0  5px #ffc,
+      0 0  10px yellow, 
+      0 0  15px #feff76, 
+      0 0  20px #fac74f, 
+      0 0  35px #f6512f, 
+      0 0  40px #f6512f, 
+      0 0  60px orangered, 
+      0 0  90px #f55034 
+  }
+  .navbar>.container-fluid .navbar-brand {
+      margin-top: 6%;
+      font-size: 85px;
+  }
+  
+  .navbar-default .navbar-brand {
+      font-family: 'Jua', sans-serif;
+      font-size: 95px;
+      padding-right: 40px;
+      padding-left: 40px;
+      padding-bottom: 10px;
+      padding-top: 15px;
+      height: 60px;
+      font-weight: bold;
+      color: red;
+      cursor: none;
+      position: relative;
+      -webkit-text-stroke-width: 1px;
+     -webkit-text-stroke-color: #ff0000;
+      text-shadow: 0 1px 0 #ccc, 
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+  }
+  .navbar-default .navbar-brand:hover
+  {
+      color: darkred;
+      text-shadow:
+      0 0  5px #ffc,
+      0 0  10px yellow, 
+      0 0  15px #feff76, 
+      0 0  20px #fac74f, 
+      0 0  35px #f6512f, 
+      0 0  40px #f6512f, 
+      0 0  60px orangered, 
+      0 0  90px #f55034 
+  }
+  
+  .imageupload {
+      background: url(https://www.gryphonhouse.com/images/authors/placeholder_avatar.jpg);
+      background-size: 100% 100%;
+      padding-bottom: 230px;
+      border: 4px solid;
+      background-color: lightgray;
+      margin-bottom: 5px;
+      width: 405px;
+      height: 305px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+      margin-top: 15px;
+      outline: 5px solid #357c79;
+  }
+  .camera {
+  
+    border: 3px solid;
+    border-top: 12px solid;
+    background: url(https://previews.123rf.com/images/aguiters/aguiters1508/aguiters150800053/43543231-photo-camera-icon-Stock-Photo.jpg);
+    background-size: 100% 100%;
+    background-color: lightgray;
+    margin-bottom: 5px;
+    margin-top: 18px;
+    width: 206px;
+    height: 159px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    box-shadow: 5px 10px 30px rgba(0,0,0,0.8);
+    outline: 5px solid #357c79;
+}
+  
+  video {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-top: -30px;
+    width: 200px;
+    height: 200px;
+    
+  }
+  ol, ul {
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding-right: 400px;
+      font-size: 18px;
+  }
+  
+  li:hover {
+      background-color: #4aaaa5;
+      font-size: 100%;
+      color:white;
+  }
+  
+  .col-sm-4 {
+      float: left;
+      margin-right: 30px;
+      position: absolute;
+      margin-top: 20px;
+      width: 40%;
+      height: 820px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      margin-left: 112px;
+      margin-bottom: 120px;
+      border-radius: 20px 15px 15px 15px/260px 1000px 255px 255px;
+  }
+  
+  .col-sm-4 p {
+      font-family: 'Georgia';
+      color:black;
+      font-size: 20px; 
+  
+  }
+  
+  .row {
+      color: #4aaaa5;
+      font-family: 'Georgia';
+      text-align: left;
+  }
+  
+  .form-group {
+      background-color: #ffffff;
+      color: black;
+  }
+  
+  
+  .h2, h2 {
+      color: #4aaaa5;
+      font-size: 30px;
+      padding-left: 20px;
+      font-weight: bold;
+  }
+  
+  .col-sm-8 {
+      width: 45%;
+      height: 500px;
+      float: right;
+      max-height: 500px;
+      overflow-y: scroll;
+      margin-right: 5%;
+      padding-top: 20px;
+      margin-top: 20px;
+      position: relative;
+      display: inline;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  
+  .h3, h3 {
+      font-size: 20px;
+      padding-left: 20px;
+      color: #4aaaa5;
+      font-family: 'Jua', sans-serif;
+  }
+  
+  .h4, h4 {
+      font-size: 15px;
+      padding-left: 20px;
+      color: #4aaaa5;
+      font-family: 'Jua', sans-serif;
+  }
+  
+  label {
+  
+      font-family: 'Jua', sans-serif;
+      color:#4aaaa5;
+      font-size:2rem;
+  
+  }
+  
+  input {
+  
+      font-family: 'Jua', sans-serif;
+      color:#41403E;
+      font-size:15px;
+      border:solid 3px #4aaaa5;
+      background-color: lightgray;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  
+  button {
+  
+    font-family: 'Jua', sans-serif;
+    border: solid 5px #4aaaa5;
+    align-self: center;
+    padding: 2%;
+    background-color: #43ddbb;
+    transition: all .5s ease;
+    color: #41403E;
+    font-size: 90%;
+    letter-spacing: 1px;
+    outline: none;
+    box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    margin-top: 10px;
+    width: 28%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  button:hover {
+  
+      box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+      transform: scale(1.1); 
+  }
+  
+  span1 button{
+    font-size: 95%;
+    padding-left: 50px;
+    padding-right: 50px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    margin-top: 20px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: #3bc6a8;
+}
+  span1 button:hover{
+    color: white;
+    
+  }
+  span button{
+  
+    margin-top: 550px;
+    font-size: 20px;
+    width: 25%;
+    float: right;
+    margin-right: -35%;
+    padding-left: 50px;
+    padding-right: 50px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+  
+  
+  input:hover {
+      box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+      border:solid 3.5px #4aaaa5;
+  }
+  
+  .VideoPlaylist {
+  
+      border:solid 3.5px #ff0000;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  
+  .VideoContainerClass {
+      margin-left:50px;
+  }
+::-webkit-scrollbar {
+    background: #4aaaa5;
+    width: 20px;
+    border-radius: 10px;
+    border: 5px solid #3bc6a8;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: url(https://blog.redbubble.com/wp-content/uploads/2014/01/Lima4-header.jpg) repeat right;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+    border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #aa26cc;
+}
+  .footer {
+      border-top: 5px solid #FFD700;
+      background-color: #1b1a1a;
+      margin-top: 30px;
+      color: white;
+      padding: 15px;
+      width: 100%;
+      position:fixed;
+      bottom:0;
+      left:0;
+      font-size: 15px;
+      text-align: center;
+  }
+
+  .modal {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   padding-top: 100px; /* Location of the box */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-contentHappy {
+    background: url(http://www.stayhealthy-stayhappy.com/wp-content/uploads/2017/06/cropped-Stay-Healthy-Stay-Happy.png) center center no-repeat;
+    background-color: #191919;
+    margin: auto;
+    color:white;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 20px;
+    border: 1px solid gold;
+    width: 80%;
+    height: 80%;
+}
+
+.modal-contentSurprise {
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRbGGl-aRt38XgUiDckGko272N0cGNjueN9tGA2FP2OSkqtVio) center center no-repeat;
+    background-color: #191919;
+    margin: auto;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 20px;
+    border: 1px solid gold;
+    width: 80%;
+    height: 80%;
+}
+
+
+.modal-contentFear {
+    background: url(http://diabetesdad.org/files/2016/04/scared.jpg) center center no-repeat;
+    background-color: #191919;
+    margin: auto;
+    color: #d71010;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 20px;
+    border: 1px solid gold;
+    width: 80%;
+    height: 80%;
+}
+
+.modal-contentAnger {
+    background: url(http://www.happyfamilyneeds.com/wp-content/uploads/2017/08/angry8.jpg) center center no-repeat;
+    background-color: #191919;
+    margin: auto;
+    color: #59c288;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 20px;
+    border: 1px solid gold;
+    width: 80%;
+    height: 80%;
+}
+
+.modal-contentdisgust {
+    background: url(http://i0.kym-cdn.com/photos/images/newsfeed/001/131/668/cf0.jpg) center center no-repeat;
+    background-color: #191919;
+    margin: auto;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 20px;
+    border: 1px solid gold;
+    width: 80%;
+    height: 80%;
+}
+
+.modal-contentsadness {
+    background: url(https://jamespavel.files.wordpress.com/2014/09/why-so-sad.jpg) center center no-repeat;
+    background-color: #191919;
+    margin: auto;
+    padding: 20px;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    border: 1px solid gold;
+    width: 80%;
+    height: 80%;
+}
+
+.modal-contentNeutral {
+    background: url(https://i2.wp.com/earthworks.org/cms/assets/uploads/archive/images/uploads/yellow-neutral-face-300x300.gif?fit=300%2C300&ssl=1) center center no-repeat;
+    background-color: #191919;
+    margin: auto;
+    color: #df1515;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 20px;
+    border: 1px solid gold;
+    width: 80%;
+    height: 80%;
+}
+
+
+.close {
+   color: #aaaaaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+}
+
+#form-container {
+    width: 60vw;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255, 0.7)
+    /* margin-bottom */
+}
+#all-reviews {
+    width: 60vw;
+    margin-bottom: 6%;
+    font-size: 11pt;
+    background-color: rgb(255, 255, 255, 0.85);
+}
+.review-div {
+    width: 60vw;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+#pushNew {
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.reviewForm {
+    font-style: italic;
+    font-family: 'Jua', sans-serif;
+}
+
+small {
+    font-size: small;
+}
+
+
+span3 button{
+font-size: 20px;
+/* padding-left: 50px; */
+/* padding-right: 50px; */
+/* box-shadow: 0 0 20px rgba(0,0,0,0.8); */
+margin-top: -10px;
+padding-top: 10px;
+padding-bottom: 35px;
+/* width: 50%; */
+/* margin-left: 25%; */
+/* margin-right: 25%; */
+bottom: 10%;
+color: darkkhaki;
+margin-left: 20%;
+border: darkgrey;
+background-color: #41403E;
+position: absolute;
+height: 10px;
+}
+
+.nameeClass {
+
+  font-style: italic;
+}
+
+.commentssClass {
+font-family: cursive;
+font-weight: bold;
+color: #f21515;
+}
+
